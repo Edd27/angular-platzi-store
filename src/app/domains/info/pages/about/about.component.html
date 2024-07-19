@@ -1,0 +1,16 @@
+<div class="container mx-auto">
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-xs">
+    Lorem ipsum dolor,
+    <span highlight>sit amet consectetur adipisicing elit.</span> Amet,
+    delectus! Fugiat obcaecati voluptas modi magni hic neque, culpa minus cum,
+    et officiis, dolorum odit harum quibusdam officia. Libero, tenetur debitis?
+  </p>
+  @if(duration() > 0) {
+  <p class="text=sm">
+    Clients counter:
+    <app-counter [duration]="duration()" [message]="message()" />
+  </p>
+  }
+  <app-wave-audio audioUrl="audio/audio.mp3" />
+</div>
