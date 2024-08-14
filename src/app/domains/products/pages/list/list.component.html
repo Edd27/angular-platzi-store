@@ -1,7 +1,21 @@
-<div
-  class="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-4 py-4"
->
-  @for(product of products(); track product.id) {
-  <app-product [product]="product" (addToCart)="addToCart($event)" />
-  }
+<div class="flex space-x-4 py-4">
+  <div class="w-80">
+    <ul>
+      <li><a routerLink="/">All</a></li>
+      @for (category of categories(); track category) {
+        <li>
+          <a routerLink="/" [queryParams]="{ categoryId: category.id }">{{
+            category.name
+          }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+  <div
+    class="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-4"
+    >
+    @for(product of products(); track product.id) {
+      <app-product [product]="product" (addToCart)="addToCart($event)" />
+    }
+  </div>
 </div>
